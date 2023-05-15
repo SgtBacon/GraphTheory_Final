@@ -1,0 +1,15 @@
+C:\Users\jayhe\OneDrive\Desktop\GraphTheory\GraphTheory_Final\GraphTheory_Project\GraphTheory_Project\bin\Debug\net6.0\GraphTheory_Project.exe
+C:\Users\jayhe\OneDrive\Desktop\GraphTheory\GraphTheory_Final\GraphTheory_Project\GraphTheory_Project\bin\Debug\net6.0\GraphTheory_Project.deps.json
+C:\Users\jayhe\OneDrive\Desktop\GraphTheory\GraphTheory_Final\GraphTheory_Project\GraphTheory_Project\bin\Debug\net6.0\GraphTheory_Project.runtimeconfig.json
+C:\Users\jayhe\OneDrive\Desktop\GraphTheory\GraphTheory_Final\GraphTheory_Project\GraphTheory_Project\bin\Debug\net6.0\GraphTheory_Project.dll
+C:\Users\jayhe\OneDrive\Desktop\GraphTheory\GraphTheory_Final\GraphTheory_Project\GraphTheory_Project\bin\Debug\net6.0\GraphTheory_Project.pdb
+C:\Users\jayhe\OneDrive\Desktop\GraphTheory\GraphTheory_Final\GraphTheory_Project\GraphTheory_Project\obj\Debug\net6.0\GraphTheory_Project.csproj.AssemblyReference.cache
+C:\Users\jayhe\OneDrive\Desktop\GraphTheory\GraphTheory_Final\GraphTheory_Project\GraphTheory_Project\obj\Debug\net6.0\GraphTheory_Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jayhe\OneDrive\Desktop\GraphTheory\GraphTheory_Final\GraphTheory_Project\GraphTheory_Project\obj\Debug\net6.0\GraphTheory_Project.AssemblyInfoInputs.cache
+C:\Users\jayhe\OneDrive\Desktop\GraphTheory\GraphTheory_Final\GraphTheory_Project\GraphTheory_Project\obj\Debug\net6.0\GraphTheory_Project.AssemblyInfo.cs
+C:\Users\jayhe\OneDrive\Desktop\GraphTheory\GraphTheory_Final\GraphTheory_Project\GraphTheory_Project\obj\Debug\net6.0\GraphTheory_Project.csproj.CoreCompileInputs.cache
+C:\Users\jayhe\OneDrive\Desktop\GraphTheory\GraphTheory_Final\GraphTheory_Project\GraphTheory_Project\obj\Debug\net6.0\GraphTheory_Project.dll
+C:\Users\jayhe\OneDrive\Desktop\GraphTheory\GraphTheory_Final\GraphTheory_Project\GraphTheory_Project\obj\Debug\net6.0\refint\GraphTheory_Project.dll
+C:\Users\jayhe\OneDrive\Desktop\GraphTheory\GraphTheory_Final\GraphTheory_Project\GraphTheory_Project\obj\Debug\net6.0\GraphTheory_Project.pdb
+C:\Users\jayhe\OneDrive\Desktop\GraphTheory\GraphTheory_Final\GraphTheory_Project\GraphTheory_Project\obj\Debug\net6.0\GraphTheory_Project.genruntimeconfig.cache
+C:\Users\jayhe\OneDrive\Desktop\GraphTheory\GraphTheory_Final\GraphTheory_Project\GraphTheory_Project\obj\Debug\net6.0\ref\GraphTheory_Project.dll
