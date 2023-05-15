@@ -190,7 +190,7 @@ List<int> find(int numVecs, List<int>[] matrix) //initial function for calling t
     {
         for (int i = 0; i < matrix[startingVect].Count; i++)
         {
-            depthFirstSearch(visited, cycle, matrix, i);
+            depthFirstSearch(visited, cycle, matrix, startingVect);
         }
     }
     return cycle;
@@ -251,7 +251,15 @@ while (true);
         CreateEdge(matrix, 1, 2);
         PrintMatrix(matrix); //print the matrix
         checkConnectedness(matrix); //check if connected
-        List<int> cycle = find(5, matrix); //find the Euler Cycle
+    if (evenDegrees(countVertexDegrees(matrix)))
+    {
+        Console.WriteLine("Euler Cycle is possible. Contains all vertices of even degree.");
+    }
+    else
+    {
+        Console.WriteLine("Euler Cycle impossible. Contains vertices of uneven degree");
+    }
+    List<int> cycle = find(5, matrix); //find the Euler Cycle
         printEuler(cycle); //print Euler Cycle
     }
 
@@ -278,29 +286,46 @@ while (true);
         CreateEdge(matrix, 4, 5);
         PrintMatrix(matrix);
         checkConnectedness(matrix);
-        List<int> cycle = find(6, matrix);
+    if (evenDegrees(countVertexDegrees(matrix)))
+    {
+        Console.WriteLine("Euler Cycle is possible. Contains all vertices of even degree.");
+    }
+    else
+    {
+        Console.WriteLine("Euler Cycle impossible. Contains vertices of uneven degree");
+    }
+    List<int> cycle = find(6, matrix);
         printEuler(cycle);
     }
 
     void demoFunc3() //demo function. Creates a 5 vertex connected graph with only Euler trail
-    // -1 1 1 0
-    // 1 -1 1 1
-    // 1 1 -1 1
-    // 0 1 1 -1
+    // -1 1 1 0 0
+    // 1 -1 0 1 1
+    // 1 0 -1 1 0
+    // 0 1 1 -1 0
+    // 0 1 0 0 -1
     //Contains no Euler Cycle, but contains Euler Trails
-    //Ex: 2 - 0 - 1 - 3 - 2 - 1
+    //Ex: 1 - 0 - 2 - 3 - 1 - 4
 {
-    //Not working for now. Euler trail hits a point where it doesn't know where to go and ends, since at a certain point there will be a bridge that it chooses not to take because Fleury's Algo doesn't like to include a bridge
-    var matrix = CreateAdjacencyMatrix(4);
+    var matrix = CreateAdjacencyMatrix(5);
     CreateEdge(matrix, 0, 1);
     CreateEdge(matrix, 0, 2);
     CreateEdge(matrix, 1, 3);
-    CreateEdge(matrix, 1, 2);
+    CreateEdge(matrix, 1, 4);
     CreateEdge(matrix, 2, 3);
 
     PrintMatrix(matrix);
     checkConnectedness(matrix);
-    List<int> cycle = find(4, matrix);
+
+    if (evenDegrees(countVertexDegrees(matrix)))
+    {
+        Console.WriteLine("Euler Cycle is possible. Contains all vertices of even degree.");
+    }
+    else
+    {
+        Console.WriteLine("Euler Cycle impossible. Contains vertices of uneven degree");
+    }
+    List<int> cycle = find(5, matrix);
     printEuler(cycle);
 
 }
@@ -333,31 +358,37 @@ while (true);
             if(pt1 >= 0 && pt2 >= 0) //to make sure we don't throw a bad value into the matrix
                 {
                     CreateEdge(matrix, pt1, pt2);
-
                 }
         } while (done.ToLower().Replace(" ", "") != "done");
 
         PrintMatrix(matrix); //output the newly created vertex
+        checkConnectedness(matrix);
 
         if (evenDegrees(countVertexDegrees(matrix))) //check if every vertex in our matrix has an even degree therefore has a Euler Cycle
         {
             Console.WriteLine("Euler Cycle possible. Every vertex contains an even degree.");
-            List<int> cycle = find(numVertices, matrix);
-            printEuler(cycle); //print the newly discovered Cycle
         }
         else //search for a Euler Trail
         {
             Console.WriteLine("Euler Cycle not possible. Contains at least one vertex of an odd degree");
-            List<int> cycle = find(numVertices, matrix);
-            printEuler(cycle); //print the newly discovered Trail
         //if Euler trail exists, output, else end
         }
-    }
+        List<int> cycle = find(numVertices, matrix);
+        printEuler(cycle); //print the newly discovered Cycle
+}
 
 //Citations:
 // Our textbook, Section 2.1 Problems, #17
+// initial idea of Fleury's Algorithm
+
 // Anon. 1892. Journal de Mathématiques Spéciales. Rendiconti del Circolo Matematico di Palermo 6, S1 (1892), 58–59. DOI:http://dx.doi.org/10.1007/bf03017542  
 // I might have cited the wrong article. I tried to cite the original French journal, but I cannot read French and can't tell if this is correct.
+
 // Anon. 2023. Fleury’s algorithm for printing Eulerian Path or circuit. (February 2023). Retrieved May 15, 2023 from https://www.geeksforgeeks.org/fleurys-algorithm-for-printing-eulerian-path/ 
+// helpful when looking into implementation of valid() function and how it works. 
+
 // Anon.Retrieved May 15, 2023 from https://jlmartin.ku.edu/courses/math105-F11/Lectures/chapter5-part2.pdf 
+// used for initial work on Fleury's Algorithm
+
 // Lumen Learning David Lippman. Mathematics for the liberal arts. Retrieved May 15, 2023 from https://courses.lumenlearning.com/wmopen-mathforliberalarts/chapter/introduction-euler-paths/ 
+// helpful for determining examples to use for euler cycles and paths. demoFunc3() uses their example as well for testing purposes.
