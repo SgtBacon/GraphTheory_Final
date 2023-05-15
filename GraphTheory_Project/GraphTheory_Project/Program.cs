@@ -91,6 +91,7 @@ bool evenDegrees(int[] degreeList) //helper function to see if every degree in a
 
 void depthFirstSearch(bool[] visited, List<int> cycle, List<int>[] matrix, int vert)
     //my DFS interpretation
+    //runs until matrix[vert] is empty, base case
 {
     visited[vert] = true; //mark the vertex as visited
     cycle.Add(vert); //add it to the current Euler Cycle
@@ -113,7 +114,7 @@ bool valid(List<int>[] matrix, int vert1, int vert2) //helper function to determ
     {
         return true;
     }
-    bool[] visited = new bool[matrix.Length];
+    bool[] visited = new bool[matrix.Length]; //temp boolean array
     int countWith = CountDFS(vert1, matrix, visited); //measure depth with the vertices still connected
 
     matrix[vert1].Remove(vert2); //temp removal of current edge
@@ -185,7 +186,7 @@ List<int> find(int numVecs, List<int>[] matrix) //initial function for calling t
     List<int> cycle = new List<int>(); //init a blank list<int> to hold the Euler cycle response
 
     int startingVect = startingVert(matrix); //find the starting vertex that our cycle will begin at. 0 or the first degree that's odd
-    if (startingVect != -1)
+    if (startingVect != -1) //-1 symbolizes an illegal value, therefore don't enter this loop if it can't work
     {
         for (int i = 0; i < matrix[startingVect].Count; i++)
         {
@@ -352,3 +353,11 @@ while (true);
         //if Euler trail exists, output, else end
         }
     }
+
+//Citations:
+// Our textbook, Section 2.1 Problems, #17
+// Anon. 1892. Journal de Mathématiques Spéciales. Rendiconti del Circolo Matematico di Palermo 6, S1 (1892), 58–59. DOI:http://dx.doi.org/10.1007/bf03017542  
+// I might have cited the wrong article. I tried to cite the original French journal, but I cannot read French and can't tell if this is correct.
+// Anon. 2023. Fleury’s algorithm for printing Eulerian Path or circuit. (February 2023). Retrieved May 15, 2023 from https://www.geeksforgeeks.org/fleurys-algorithm-for-printing-eulerian-path/ 
+// Anon.Retrieved May 15, 2023 from https://jlmartin.ku.edu/courses/math105-F11/Lectures/chapter5-part2.pdf 
+// Lumen Learning David Lippman. Mathematics for the liberal arts. Retrieved May 15, 2023 from https://courses.lumenlearning.com/wmopen-mathforliberalarts/chapter/introduction-euler-paths/ 
